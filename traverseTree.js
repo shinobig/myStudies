@@ -6,6 +6,7 @@ class Node {
     this.right = null;
   }
 }
+
 class BinarySearchTree {
   constructor() {
     this.root = null;
@@ -80,24 +81,33 @@ class BinarySearchTree {
 
 }
 
-
 let tree = new BinarySearchTree();
-// tree.root = new Node(10);
-// tree.root.right = new Node(15);
-// tree.root.left = new Node(7);
-// tree.root.left.right = new Node(9);
 
-tree.insert(20);
-tree.insert(30);
-tree.insert(50);
 tree.insert(10);
-tree.insert(2);
-// console.log(tree.insert(50));
+tree.insert(6);
+tree.insert(15);
+tree.insert(3);
+tree.insert(8);
+tree.insert(20);
 
-console.log(tree.find(44));
 
-tree.insert(44);
+function breadthFrist(tree) {
+  let queue = [];
+  let visited = [];
+  queue.push(tree.root);
+  while (queue.length > 0) {
+    let node = queue.shift();
+    if (node.left) {
+      queue.push(node.left);
+    }
+    if (node.right) {
+      queue.push(node.right);
+    }
+    visited.push(node);
+  }
 
-console.log(tree.find(44));
+  let result = visited.map(node => node.val);
+  return result;
+}
 
-// console.log(tree.root);
+console.log(breadthFrist(tree));
