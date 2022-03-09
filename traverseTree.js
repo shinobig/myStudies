@@ -142,7 +142,7 @@ function breadthFrist(tree) {
 return visited
 }
 
-console.log(breadthFrist(tree));
+//console.log(breadthFrist(tree));
 
 
 //  DEPTH FIRST
@@ -162,7 +162,7 @@ function preOrder(tree) {
   return visited.map(node => node.val);
 }
 
-// console.log(preOrder(tree));
+ console.log(preOrder(tree));
 
 function postOrder(tree) {
   let visited = [];
@@ -196,6 +196,10 @@ function inOrder(tree) {
   return visited.map(node => node.val);
 }
 
-// console.log(inOrder(tree));
+ console.log(inOrder(tree));
 
 // console.log(Math.ceil(Math.sqrt(16)));
+
+
+
+
