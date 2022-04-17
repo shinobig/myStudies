@@ -136,12 +136,49 @@
 
 // console.log(maxArea([1,3,2,5,25,24,5]));
 
+//
+// function isValid(s){
+//
+//
+//
+// }
+//
+//
+// console.log(isValid());
 
-function isValid(s){
 
+function searchInsert(nums, target){
+
+  let index = Math.floor(nums.length / 2);
+  let start = 0;
+  let end  = nums.length -1
+
+  let checkNum = nums[index]
+
+  while((end > start) && checkNum !== target){
+    checkNum = nums[index];
+
+    if(checkNum === target) return index
+
+    if(checkNum < target){
+      start = index + 1;
+
+    } else if (checkNum > target){
+      end = index - 1;
+    }
+
+    index = Math.floor((start + end)/2)
+
+  }
+
+
+  if(nums[index] >= target){
+    return index
+  }
+
+  return index+1
 
 
 }
 
-
-console.log(isValid());
+console.log(searchInsert([1,3,5,6], 2));
